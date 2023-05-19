@@ -1,4 +1,7 @@
 body{
   background-color: cyan;
   background-image: linear-gradient(90deg, cyan, black);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
 }

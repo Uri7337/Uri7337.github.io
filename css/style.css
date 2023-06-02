@@ -5,3 +5,25 @@ body{
   margin: 0;
   padding: 20px;
 }
+
+h1 {
+    text-align: center;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+}
+
+input[type="time"], input[type="date"] {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+}

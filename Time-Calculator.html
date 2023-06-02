@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title>Time Calculator</title>
-     <link rel="stylesheet" href="/css/style.css">
+    <title>Time Calculator</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <script src="/script/scripts.js"></script>
@@ -12,6 +12,10 @@
         <input type="time" id="start-time">
     </div>
     <div class="input-container">
+        <label>End Date:</label>
+        <input type="date" id="end-date" value="<?php echo date('Y-m-d'); ?>">
+    </div>
+    <div class="input-container">
         <label>End Time:</label>
         <input type="time" id="end-time">
     </div>
@@ -19,6 +23,5 @@
         <button onclick="calculateTime()">Calculate</button>
     </div>
     <div class="result" id="result"></div>
-    <script src="script.js"></script>
 </body>
 </html>

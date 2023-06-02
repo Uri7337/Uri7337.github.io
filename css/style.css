@@ -4,8 +4,8 @@
 }
 
 body{
-  background-color: cyan;
-  background-image: linear-gradient(90deg, cyan, black);
+  background-image: linear-gradient(19deg, #031010, #1b1d46);
+  color: cadetblue;
   font-family: Arial, sans-serif;
   margin: 0;
   min-height: 100vh;

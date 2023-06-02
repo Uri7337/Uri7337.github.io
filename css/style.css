@@ -109,6 +109,11 @@ input[type="time"], input[type="date"] {
   animation: spin 2.5s linear infinite;
 }
 
+.cardPosition{
+    display: flex;
+    justify-content: center;
+}
+
 @keyframes spin {
   0% {
     --rotate: 0deg;

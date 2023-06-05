@@ -8,13 +8,15 @@ function calculateTime() {
     var endDateTime = new Date(endDate + " " + endTime);
 
     var diff = endDateTime - startDateTime;
-
+    
+    var Totalmins = Math.floor(diff / 1000 / 60);
     var hours = Math.floor(diff / 1000 / 60 / 60);
     diff -= hours * 1000 * 60 * 60;
     var minutes = Math.floor(diff / 1000 / 60);
     diff -= minutes * 1000 * 60;
     var seconds = Math.floor(diff / 1000);
+    
 
     var result = document.getElementById("result");
-    result.textContent = "Time Difference: " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds.";
+    result.textContent = "Time Difference: " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds." + "Total Minutes: " + Totalmins;
 }

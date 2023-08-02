@@ -26,5 +26,6 @@ function calculateTimeDifference() {
   const hours = Math.floor(timeDifferenceInMinutes / 60);
   const minutes = timeDifferenceInMinutes % 60;
   
+  const resultElement = document.getElementById("result");
   resultElement.textContent = `Time difference: ${timeDifferenceInMinutes} minutes or ${hours} hours and ${minutes} minutes`;
 }

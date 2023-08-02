@@ -6,10 +6,17 @@
 </head>
 <body>
     <script src="/script/scripts.js"></script>
-    <h1>Time Calculator</h1>
-    <label for="start-time">Enter Start Time (HH:mm): </label>
-    <input type="text" id="start-time" placeholder="Enter start time (e.g. 12:30)">
-    <button onclick="calculateTimeDifference()">Calculate</button>
-    <p id="result"></p>
+  <h1>Time Calculator</h1>
+  <label for="start-date">Enter Start Date:</label>
+  <input type="date" id="start-date">
+
+  <label for="start-time">Enter Start Time (HH:mm):</label>
+  <input type="text" id="start-time" placeholder="Enter start time (e.g. 12:30)">
+
+  <label for="end-date">Enter End Date:</label>
+  <input type="date" id="end-date" disabled>
+
+  <button onclick="calculateTimeDifference()">Calculate</button>
+  <p id="result"></p>
 </body>
 </html>

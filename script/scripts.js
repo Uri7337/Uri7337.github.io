@@ -30,5 +30,5 @@ function calculateEndTime() {
 document.getElementById("start-time").addEventListener("change", calculateEndTime);
 
 // Initially calculate the end time with the default value of the start time input
-calculateEndTime();
+
 

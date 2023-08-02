@@ -21,9 +21,10 @@ function calculateTimeDifference() {
   // Calculate the time difference in milliseconds
   const timeDifferenceInMs = endTime - startTime;
 
-  // Convert time difference to minutes
+  // Convert time difference 
   const timeDifferenceInMinutes = Math.floor(timeDifferenceInMs / (1000 * 60));
-
-  const resultElement = document.getElementById("result");
-  resultElement.textContent = `Time difference: ${timeDifferenceInMinutes} minutes.`;
+  const hours = Math.floor(timeDifferenceInMinutes / 60);
+  const minutes = timeDifferenceInMinutes % 60;
+  
+  resultElement.textContent = `Time difference: ${timeDifferenceInMinutes} minutes or ${hours} hours and ${minutes} minutes`;
 }

@@ -1,22 +1,34 @@
-function calculateTime() {
-    var startDate = new Date();
-    var startTime = document.getElementById("start-time").value;
-    var endDate = document.getElementById("end-date").value;
-    var endTime = document.getElementById("end-time").value;
+function calculateEndTime() {
+    const startTimeInput = document.getElementById("start-time");
+    const endTimeInput = document.getElementById("end-time");
 
-    var startDateTime = new Date(startDate.toDateString() + " " + startTime);
-    var endDateTime = new Date(endDate + " " + endTime);
+    // Get the current date
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
 
-    var diff = endDateTime - startDateTime;
-    
-    var Totalmins = Math.floor(diff / 1000 / 60);
-    var hours = Math.floor(diff / 1000 / 60 / 60);
-    diff -= hours * 1000 * 60 * 60;
-    var minutes = Math.floor(diff / 1000 / 60);
-    diff -= minutes * 1000 * 60;
-    var seconds = Math.floor(diff / 1000);
-    
+    // Get the selected start time
+    const startTime = startTimeInput.value;
 
-    var result = document.getElementById("result");
-    result.textContent = "Time Difference: " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds." + "Total Minutes: " + Totalmins;
+    // Set the end time to 16:20
+    const endTime = "16:20";
+
+    // Combine the date and time strings to create the final date-time values
+    const startDateTime = `${year}-${month}-${day}T${startTime}`;
+    const endDateTime = `${year}-${month}-${day}T${endTime}`;
+
+    // Set the calculated end time in the input field
+    endTimeInput.value = endTime;
+
+    // Display the result
+    console.log("Start Date-Time:", startDateTime);
+    console.log("End Date-Time:", endDateTime);
 }
+
+// Add an event listener to the start time input to recalculate end time on change
+document.getElementById("start-time").addEventListener("change", calculateEndTime);
+
+// Initially calculate the end time with the default value of the start time input
+calculateEndTime();
+

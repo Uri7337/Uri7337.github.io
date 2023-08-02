@@ -7,12 +7,9 @@
 <body>
     <script src="/script/scripts.js"></script>
     <h1>Time Calculator</h1>
-    <label for="start-time">Start Time:</label>
-    <input type="time" id="start-time" required>
-
-    <label for="end-time">End Time:</label>
-    <input type="time" id="end-time" disabled>
-
-   
+    <label for="start-time">Enter Start Time (HH:mm): </label>
+    <input type="text" id="start-time" placeholder="Enter start time (e.g. 12:30)">
+    <button onclick="calculateTimeDifference()">Calculate</button>
+    <p id="result"></p>
 </body>
 </html>

@@ -29,3 +29,20 @@ function calculateTimeDifference() {
   const resultElement = document.getElementById("result");
   resultElement.textContent = `Time difference: ${timeDifferenceInMinutes} minutes or ${hours} hours and ${minutes} minutes`;
 }
+
+
+// Get the input field
+let input = document.getElementsByClassName("timeinput");
+
+// Execute a function when the user presses a key on the keyboard
+input[0].addEventListener("keypress", confirmEnter(event)); 
+input[1].addEventListener("keypress", confirmEnter(event));
+
+function confirmEnter(event){
+    if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.document.getElementsByClassName("ghlikebutton")[0].click();
+  }
+}

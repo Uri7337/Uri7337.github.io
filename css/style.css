@@ -1,7 +1,6 @@
-:root {
-  --card-height: 65vh;
-  --card-width: calc(var(--card-height) / 1.5);
-}
+/* :root {
+
+} */
 
 body {
   background-image: linear-gradient(19deg, #031010, #1b1d46);
@@ -17,37 +16,58 @@ body {
   box-sizing: border-box;
 }
 
+/* New CSS */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+/* End of new CSS */
+
 .FirstPageText {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .input-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 input[type="time"], input[type="date"] {
-    margin-top: 5px;
-    padding: 5px;
+  margin-top: 5px;
+  padding: 5px;
 }
 
 .timeinput{
-    border: none;
-    background-color: transparent;
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 10px;
-    color: #06bb06;
-    margin 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px;
+  color: #06bb06;
+  margin 10px;
 }
 
 timeinput:focus-visible {
-    outline: none;
+  outline: none;
 }
 
 .ghlikebutton {
@@ -101,88 +121,8 @@ timeinput:focus-visible {
 }
 
 .result {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-@property --rotate {
-  syntax: "<angle>";
-  initial-value: 132deg;
-  inherits: false;
-}
-
-.card {
-  background: #191c29;
-  width: var(--card-width);
-  height: var(--card-height);
-  padding: 3px;
-  position: relative;
-  border-radius: 6px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  font-size: 1.5em;
-  color: rgb(88 199 250 / 0%);
-  cursor: pointer;
-  font-family: cursive;
-}
-
-.card:hover {
-  color: rgb(88 199 250 / 100%);
-  transition: color 1s;
-}
-.card:hover:before, .card:hover:after {
-  animation: none;
-  opacity: 0;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
 
-.card::before {
-  content: "";
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
-}
-
-.card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
-    opacity: 1;
-  transition: opacity .5s;
-  animation: spin 2.5s linear infinite;
-}
-
-.cardPosition{
-    display: flex;
-    justify-content: center;
-}
-
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}

@@ -2,20 +2,31 @@
 <html>
 <head>
   <title>Time Calculator</title>
+    <link rel="stylesheet" href="/css/style-time.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <script src="/script/scripts.js"></script>
-  <h1>Time Calculator</h1>
-  <label for="start-time">Enter Start Time: </label>
-  <input class="timeinput" type="text" id="start-time" placeholder="(7:10)">
+  <script src="/script/scripts.js"></script>
+  <div class="container">
+
+    <div><h1>Time Calculator</h1></div>
+    <div class="container-inputs">
+      <label for="start-time">Enter Start Time: </label>
+      <input class="timeinput" type="text" id="start-time" placeholder="(7:10)">
+      
+      <label for="end-time">End Time: </label>
+      <input  class="timeinput" type="text" id="end-time" value="16:20">
+    </div>
   
-  <label for="end-time">End Time: </label>
-  <input  class="timeinput" type="text" id="end-time" value="16:20">
+    <div class="container-buttons">
+     <button class="ghlikebutton" onclick="calculateTimeDifference()" type="submit">Calculate</button>
+  
+    <p id="result"></p>
+  </div>
 
-  <button class="ghlikebutton" onclick="calculateTimeDifference()" type="submit">Calculate</button>
-
-  <p id="result"></p>
+  </div>
+  
+ 
 
   
 </body>

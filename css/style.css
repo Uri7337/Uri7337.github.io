@@ -63,7 +63,6 @@ input[type="time"], input[type="date"] {
   text-align: center;
   padding: 10px;
   color: #06bb06;
-  margin 10px;
 }
 
 timeinput:focus-visible {

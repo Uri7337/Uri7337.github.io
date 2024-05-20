@@ -8,4 +8,5 @@
 
 .container-inputs > * {
     padding: 10px;
+    outline: none;
 }

@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const resultElement = document.getElementById("result-days-left");
         if (resultElement) {
             // Výsledek zobrazíme
-            const msg = ' zbývá ' + differenceInDays + ' dní.';
+            const msg = differenceInDays + ' days.';
             resultElement.innerText = msg;
         } else {
-            console.error('Element s ID "result-days-left" nebyl nalezen.');
+            console.error('Element with ID "result-days-left" not found.');
         }
     }
 

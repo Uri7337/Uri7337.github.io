@@ -1,0 +1,21 @@
+{
+  "name": "Uri",
+  "short_name": "Uri",
+  "icons": [
+    {
+      "src": "/img/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/img/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#00f0ff",
+  "background_color": "#00f0ff",
+  "display": "standalone"
+}

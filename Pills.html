@@ -6,47 +6,7 @@
     <title>Přehled Prášků</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="/css/style.css">
-    <style>
-       
-        .pill-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .pill {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-        .red-pill {
-            background-color: red;
-        }
-        .white-pill {
-            background-color: white;
-            border: 1px solid #ccc;
-        }
-        .calendar-day {
-            width: 100px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-        .red {
-            background-color: #ffcccc;
-        }
-        .white {
-            background-color: #fff;
-        }
-        .selected {
-            border: 2px solid blue;
-        }
-    </style>
+     <link rel="stylesheet" href="/css/pills.css">
     <script>
     fetch('../html-components/favicons.html')
       .then(response => response.text())
@@ -67,9 +27,10 @@
   </script>
     <div class="container">
         <h1 class="text-center">Přehled Prášků</h1>
-        <div class="mb-3">
+        <div class="mb-3 position-relative">
             <label for="pill-input" class="form-label">Zadejte číslo prášečku:</label>
-            <input type="number" id="pill-input" class="form-control" placeholder="1 až 28">
+            <input type="number" id="pill-input" class="form-control" placeholder="1 až 28" onfocus="showPillPicker(event)" onblur="hidePillPicker(event)">
+            <div id="pill-picker" class="pill-picker"></div>
         </div>
         <div class="mb-3">
             <label for="date-input" class="form-label">Vyberte datum:</label>
@@ -83,52 +44,6 @@
         </div>
     </div>
 
-    <script>
-        const totalPills = 3 * 7 + 7; // 28 pills
-        const pillSequence = Array(21).fill('red').concat(Array(7).fill('white'));
-
-        function generatePillSequence(startPill, startDate) {
-            let sequence = [];
-            for (let i = -7; i <= 7; i++) {
-                let index = (startPill - 1 + i + totalPills) % totalPills; // Ensure circular sequence
-                let date = new Date(startDate);
-                date.setDate(date.getDate() + i);
-                sequence.push({ pill: pillSequence[index], date: date });
-            }
-            return sequence;
-        }
-
-        function updateCalendar() {
-            const inputPill = parseInt(document.getElementById('pill-input').value);
-            const inputDate = document.getElementById('date-input').value;
-            const calendar = document.getElementById('calendar');
-
-            if (isNaN(inputPill) || inputPill < 1 || inputPill > totalPills) {
-                alert('Zadejte platné číslo prášečku (1 až 28)');
-                return;
-            }
-
-            if (!inputDate) {
-                alert('Vyberte platné datum.');
-                return;
-            }
-
-            const startDate = new Date(inputDate);
-            calendar.innerHTML = '';
-            const sequence = generatePillSequence(inputPill, startDate);
-
-            sequence.forEach(({ pill, date }) => {
-                const day = document.createElement('div');
-                day.className = `calendar-day ${pill}`;
-                day.innerText = date.toLocaleDateString('cs-CZ');
-
-                if (date.toDateString() === startDate.toDateString()) {
-                    day.classList.add('selected');
-                }
-
-                calendar.appendChild(day);
-            });
-        }
-    </script>
+    <script src="/script/pills.js"></script>
 </body>
 </html>

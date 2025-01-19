@@ -31,7 +31,7 @@
             border: 1px solid #ccc;
         }
         .calendar-day {
-            width: 40px;
+            width: 100px;
             height: 40px;
             display: flex;
             justify-content: center;
@@ -74,17 +74,20 @@
         const totalPills = 3 * 7 + 7; // 28 pills
         const pillSequence = Array(21).fill('red').concat(Array(7).fill('white'));
 
-        function generatePillSequence(startPill) {
+        function generatePillSequence(startPill, startDate) {
             let sequence = [];
-            for (let i = startPill - 7; i < startPill + 7; i++) {
-                let index = (i - 1 + totalPills) % totalPills; // Ensure circular sequence
-                sequence.push(pillSequence[index]);
+            for (let i = -7; i <= 7; i++) {
+                let index = (startPill - 1 + i + totalPills) % totalPills; // Ensure circular sequence
+                let date = new Date(startDate);
+                date.setDate(date.getDate() + i);
+                sequence.push({ pill: pillSequence[index], date: date });
             }
             return sequence;
         }
 
         function updateCalendar() {
             const inputPill = parseInt(document.getElementById('pill-input').value);
+            const inputDate = document.getElementById('date-input').value;
             const calendar = document.getElementById('calendar');
 
             if (isNaN(inputPill) || inputPill < 1 || inputPill > totalPills) {
@@ -92,15 +95,21 @@
                 return;
             }
 
-            calendar.innerHTML = '';
-            const sequence = generatePillSequence(inputPill);
+            if (!inputDate) {
+                alert('Vyberte platné datum.');
+                return;
+            }
 
-            sequence.forEach((pill, idx) => {
+            const startDate = new Date(inputDate);
+            calendar.innerHTML = '';
+            const sequence = generatePillSequence(inputPill, startDate);
+
+            sequence.forEach(({ pill, date }) => {
                 const day = document.createElement('div');
                 day.className = `calendar-day ${pill}`;
-                day.innerText = idx - 7;
+                day.innerText = date.toLocaleDateString('cs-CZ');
 
-                if (idx === 7) {
+                if (date.toDateString() === startDate.toDateString()) {
                     day.classList.add('selected');
                 }
 

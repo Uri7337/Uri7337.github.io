@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přehled Prášků</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .pill-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .pill {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .red-pill {
+            background-color: red;
+        }
+        .white-pill {
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        .calendar-day {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .red {
+            background-color: #ffcccc;
+        }
+        .white {
+            background-color: #fff;
+        }
+        .selected {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Přehled Prášků</h1>
+        <div class="mb-3">
+            <label for="pill-input" class="form-label">Zadejte číslo prášečku:</label>
+            <input type="number" id="pill-input" class="form-control" placeholder="1 až 28">
+        </div>
+        <div class="mb-3">
+            <label for="date-input" class="form-label">Vyberte datum:</label>
+            <input type="date" id="date-input" class="form-control">
+        </div>
+        <button class="btn btn-primary" onclick="updateCalendar()">Zobrazit Kalendář</button>
+
+        <div class="mt-4">
+            <h3>Harmonogram:</h3>
+            <div id="calendar" class="d-flex flex-wrap justify-content-center"></div>
+        </div>
+    </div>
+
+    <script>
+        const totalPills = 3 * 7 + 7; // 28 pills
+        const pillSequence = Array(21).fill('red').concat(Array(7).fill('white'));
+
+        function generatePillSequence(startPill) {
+            let sequence = [];
+            for (let i = startPill - 7; i < startPill + 7; i++) {
+                let index = (i - 1 + totalPills) % totalPills; // Ensure circular sequence
+                sequence.push(pillSequence[index]);
+            }
+            return sequence;
+        }
+
+        function updateCalendar() {
+            const inputPill = parseInt(document.getElementById('pill-input').value);
+            const calendar = document.getElementById('calendar');
+
+            if (isNaN(inputPill) || inputPill < 1 || inputPill > totalPills) {
+                alert('Zadejte platné číslo prášečku (1 až 28)');
+                return;
+            }
+
+            calendar.innerHTML = '';
+            const sequence = generatePillSequence(inputPill);
+
+            sequence.forEach((pill, idx) => {
+                const day = document.createElement('div');
+                day.className = `calendar-day ${pill}`;
+                day.innerText = idx - 7;
+
+                if (idx === 7) {
+                    day.classList.add('selected');
+                }
+
+                calendar.appendChild(day);
+            });
+        }
+    </script>
+</body>
+</html>

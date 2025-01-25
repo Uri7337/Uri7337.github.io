@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Empty</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+        fetch('../html-components/favicons.html')
+          .then(response => response.text())
+          .then(data => {
+            var head = document.head;
+            var temp = document.createElement('div');
+            temp.innerHTML = data;
+            Array.from(temp.children).forEach(child => head.appendChild(child));
+          });
+    </script>
+
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('../html-components/header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+      </script>
+      
+</body>
+</html>

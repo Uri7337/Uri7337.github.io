@@ -19,7 +19,7 @@ export default function Home() {
             </head>
 
             <body>
-                <script src="/script/scripts.js"></script>
+                <script src="/js/scripts.js"></script>
 
                 <div id="header"></div>
                 <script>

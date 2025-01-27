@@ -96,6 +96,10 @@ h1 {
   text-align: center;
 }
 
+.welcome-text{
+  text-align: center;
+}
+
 .input-container {
   margin-top: 20px;
 }

@@ -5,6 +5,7 @@
   <title>Time Calculator</title>
   <link rel="stylesheet" href="/css/time-calculator.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/fancylabels.css">
 
   <script>
     fetch('../html-components/favicons.html')
@@ -31,28 +32,36 @@
   <div class="container">
 
     <div>
-      <h1>Time Calculator</h1>
+      <h1 class="underline">Time Calculator</h1>
     </div>
     <div class="container-inputs">
-      <label for="start-time">Enter Start Time: </label>
-      <input class="timeinput" type="text" id="start-time" placeholder="(7:10)">
+      <div class="form__group field">
+        <input class="timeinput form__field start_field" type="text" id="start-time" placeholder="">
+        <label for="start-time" class="form__label start_label">Start Time</label>
+      </div>
 
-      <label for="end-time">End Time: </label>
-      <input class="timeinput" type="text" id="end-time" value="16:20">
+      <div class="form__group field">
+        <input class="timeinput form__field end_field" type="text" id="end-time" placeholder="">
+        <label for="end-time" class="form__label end_label">End Time</label>
+      </div>
+
+
     </div>
 
     <div class="container-buttons">
       <button class="ghlikebutton" onclick="calculateTimeDifference()" type="submit">Calculate</button>
-
-      <p id="result"></p>
-
+    </div>
+      <div class="results">
+        <p id="result"></p>
+        <p id="result2"></p>
+      </div>
 
     </div>
     <div class="container-seven">
       <h2>🦥</h2>
       <p id="result-days-left"></p>
     </div>
-  </div>
+  
 
 
   <script src="/script/scripts.js"></script>

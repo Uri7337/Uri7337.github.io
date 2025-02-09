@@ -80,7 +80,9 @@ function calculateTimeDifference() {
   const minutes = timeDifferenceInMinutes % 60;
 
   const resultElement = document.getElementById("result");
-  resultElement.textContent = `Time difference: ${timeDifferenceInMinutes} minutes or ${hours} hours and ${minutes} minutes`;
+  const result2Element = document.getElementById("result2");
+  resultElement.textContent = `${hours} hours and ${minutes} minutes`;
+  result2Element.textContent = `${timeDifferenceInMinutes} minutes`;
 }
 
 // Get the input field

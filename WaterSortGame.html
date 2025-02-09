@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterSortGame</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+
+    <script>
+        fetch('../html-components/favicons.html')
+            .then(response => response.text())
+            .then(data => {
+                var head = document.head;
+                var temp = document.createElement('div');
+                temp.innerHTML = data;
+                Array.from(temp.children).forEach(child => head.appendChild(child));
+            });
+    </script>
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('../html-components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Create Pixi Application
+            let app = new PIXI.Application({ backgroundColor: 0x1099bb, resizeTo: window });
+
+            // Append canvas to body
+            document.body.appendChild(app.view);
+
+            // Load sprite
+            let sprite = PIXI.Sprite.from("https://pixijs.io/examples/examples/assets/bunny.png");
+            sprite.anchor.set(0.5);
+            sprite.x = app.screen.width / 2;
+            sprite.y = app.screen.height / 2;
+            app.stage.addChild(sprite);
+        });
+    </script>
+
+
+</body>
+
+</html>

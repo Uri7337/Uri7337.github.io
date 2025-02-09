@@ -130,6 +130,10 @@ h2 {
   display: block;
 }
 
+.welcome-text{
+  text-align: center;
+}
+
 .input-container {
   margin-top: 20px;
 }

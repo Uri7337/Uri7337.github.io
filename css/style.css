@@ -1,20 +1,20 @@
 :root {
---color-primary: rgb(77, 235, 241);
---white:rgb(255, 255, 255);
---gray:rgb(128,128,128);
---black:rgb(0, 0, 0);
---h2-font-size: 2.6rem;
---background: linear-gradient(19deg, #031010, #1b1d46);
---background2: rgb(36, 37, 38);
---size-radius: 4px;
---size-bezel: 1rem;
+  --color-primary: rgb(77, 235, 241);
+  --white: rgb(255, 255, 255);
+  --gray: rgb(128, 128, 128);
+  --black: rgb(0, 0, 0);
+  --h2-font-size: 2.6rem;
+  --background: linear-gradient(19deg, #031010, #1b1d46);
+  --background2: rgb(36, 37, 38);
+  --size-radius: 4px;
+  --size-bezel: 1rem;
 }
 
 body {
   /*background-image: var(--background);*/
   background: var(--background2);
   color: var(--color-primary);
-  font-family: Outfit,sans-serif;
+  font-family: Outfit, sans-serif;
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -26,7 +26,7 @@ body {
   margin-top: 100px;
 }
 
-body p{
+body p {
   color: var(--white);
 }
 
@@ -38,7 +38,7 @@ body p{
   width: 100%;
   color: #fff;
   padding: 15px 20px;
-  z-index: 1000; 
+  z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,11 +64,16 @@ body p{
   border-radius: 40px;
 }
 
- .nav-links {
+.hamburger{
+  display: none;
+}
+
+.nav-links {
   list-style: none;
   padding: 0;
   display: flex;
 }
+
 .nav-links li {
   position: relative;
 }
@@ -106,6 +111,7 @@ body p{
 .dropdown li {
   width: 150px;
 }
+
 /* **************************** */
 
 .FirstPageText {
@@ -118,7 +124,7 @@ body p{
 h2 {
   text-align: center;
   color: var(--white);
-  font-size:var(--h2-font-size);
+  font-size: var(--h2-font-size);
 }
 
 .underline:after {
@@ -130,7 +136,7 @@ h2 {
   display: block;
 }
 
-.welcome-text{
+.welcome-text {
   text-align: center;
 }
 
@@ -138,12 +144,13 @@ h2 {
   margin-top: 20px;
 }
 
-input[type="time"], input[type="date"] {
+input[type="time"],
+input[type="date"] {
   margin-top: 5px;
   padding: 5px;
 }
 
-.timeinput{
+.timeinput {
   border: none;
   background-color: transparent;
   font-size: 1.5rem;
@@ -192,7 +199,7 @@ timeinput:focus-visible {
 .ghlikebutton:focus {
   box-shadow: rgba(7, 255, 230, 0.4) 0 0 0 3px;
   outline: none;
-} 
+}
 
 .ghlikebutton:disabled {
   background-color: var(--gray);
@@ -214,5 +221,17 @@ timeinput:focus-visible {
 
 /*Mobile devices*/
 @media only screen and (max-width: 1200px) {
-  
+  nav {
+    display: none;
+  }
+
+  .hamburger svg {
+    display: flex;
+    width: 35px;
+    height: auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }

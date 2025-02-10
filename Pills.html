@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přehled Prášků</title>
-   
-     <link rel="stylesheet" href="/css/style.css">
-     <link rel="stylesheet" href="/css/pills.css">
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Přehled Prášků</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pills.css">
+  <link rel="stylesheet" href="/css/fancylabels.css">
+
+  <script>
     fetch('../html-components/favicons.html')
       .then(response => response.text())
       .then(data => {
@@ -18,38 +21,45 @@
       });
   </script>
 </head>
+
 <body>
-    <div id="header"></div>
+  <div id="header"></div>
   <script>
     fetch('../html-components/header.html')
       .then(response => response.text())
       .then(data => document.getElementById('header').innerHTML = data);
   </script>
 
-    <div class="container">
-        <h1 class="text-center underline" >Přehled Prášků</h1>
-        <div class="card">
-          <label for="pill-input" class="input form-label">
-            <input class="input__field form-control" type="number" id="pill-input" placeholder="1-28" onfocus="showPillPicker(event)" onblur="hidePillPicker(event)" />
-            <span class="input__label">Zadejte číslo prášečku:</span>
-          </label>
-          <!-- Původní label-->
-          <!-- <label for="pill-input" class="form-label">Zadejte číslo prášečku:</label> -->
-          <!-- <input type="number" id="pill-input" class="form-control" placeholder="1 až 28" onfocus="showPillPicker(event)" onblur="hidePillPicker(event)"> -->
-          <div id="pill-picker" class="pill-picker"></div>
-        
-        
-            <label for="date-input" class="form-label">Vyberte datum:</label>
-            <input type="date" id="date-input" class="form-control">
-        
-        <button class="btn btn-primary ghlikebutton" onclick="updateCalendar()">Zobrazit Kalendář</button>
+  <div class="container">
+    <h1 class="text-center underline">Přehled Prášků</h1>
+    <div class="card">
+      <!-- Původní label-->
+      <!-- <label for="pill-input" class="form-label">Zadejte číslo prášečku:</label> -->
+      <!-- <input type="number" id="pill-input" class="form-control" placeholder="1 až 28" onfocus="showPillPicker(event)" onblur="hidePillPicker(event)"> -->
+      <div class="group form__group field">
+        <input id="pill-input" class="form__field pill_field" for="pill-input" placeholder="1-28" type="number" required
+          onfocus="showPillPicker(event)" onblur="hidePillPicker(event)">
+        <label for="pill-input" class="form__label pill_label">Číslo Prášečku 1-28</label>
+        <div id="pill-picker" class="pill-picker"></div>
       </div>
-        <div class="mt-4">
-            <h3>Harmonogram:</h3>
-            <div id="calendar" class="d-flex flex-wrap justify-content-center"></div>
-        </div>
-    </div>
 
-    <script src="/script/pills.js"></script>
+      <div class="group form__group field">
+        <input id="date-input" class="form__field date_field" for="date-input" type="date" required>
+        <label for="date-input" class="form__label date_label">Vyberte datum</label>
+        
+      </div>
+
+      
+
+      <button class="btn btn-primary ghlikebutton" onclick="updateCalendar()">Zobrazit Kalendář</button>
+    </div>
+    <div class="mt-4">
+      <h3 id="cal-header" class="cal-gray">Harmonogram:</h3>
+      <div id="calendar" class="d-flex flex-wrap justify-content-center"></div>
+    </div>
+  </div>
+
+  <script src="/script/pills.js"></script>
 </body>
+
 </html>

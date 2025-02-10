@@ -42,6 +42,14 @@ function updateCalendar() {
 
         calendar.appendChild(day);
     });
+
+    /*header change*/ 
+    let header = document.getElementById("cal-header");
+    if (header.classList.contains("cal-gray")) {
+        header.classList.remove("cal-gray");
+        header.classList.add("cal-normal");
+    }
+
 }
 
 function showPillPicker(event) {

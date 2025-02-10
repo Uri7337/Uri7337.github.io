@@ -7,7 +7,7 @@
 --background: linear-gradient(19deg, #031010, #1b1d46);
 --background2: rgb(36, 37, 38);
 --size-radius: 4px;
---size-bezel: 0.5rem;
+--size-bezel: 1rem;
 }
 
 body {

@@ -8,15 +8,17 @@
 
 .card {
     background: var(--color-background);
-    padding: calc(4* var(--size-bezel));
-    margin-top: calc(4* var(--size-bezel));
+    padding: calc(6* var(--size-bezel));
+    margin-top: calc(2* var(--size-bezel));
     border-radius: var(--size-radius);
     border: 3px solid var(--color-shadow, currentColor);
     box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
+    display:flex;
+    flex-direction: column;
 }
 
-.input{
-    position: relative;
+.group.form__group {
+    width: 100%;
 }
 
 .input__field {
@@ -46,6 +48,46 @@
     line-height: 1.2;
 }
 
+/*pill field & label*/
+.pill_field:placeholder-shown ~ .pill_label{
+    left: 14%;
+}
+
+.pill_field:focus ~ .pill_label {
+    left: 20%;
+}
+
+.pill_label {
+    left: 21%;
+}
+
+.pill_field.form__field{
+    text-align: center;
+}
+/******************/
+
+/*date field & label*/
+.date_field:placeholder-shown ~ .date_label{
+    left: 20%;
+}
+
+.date_field:focus ~ .date_label {
+    left: 26%;
+}
+
+.date_label {
+    left: 27%;
+}
+
+.date_field.form__field{
+    text-align: center;
+}
+/******************/
+
+button.btn.btn-primary.ghlikebutton {
+    margin-top: 40px;
+}
+
 .mt-4 {
     display: flex;
     flex-direction: column;
@@ -53,10 +95,21 @@
     align-items: center;
 }
 
+.cal-gray{
+    color: var(--gray);
+}
+
+.cal-normal{
+    color: unset;
+}
+
 div#calendar {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    width: 566px;
 }
+
 
 .pill-box {
     display: flex;

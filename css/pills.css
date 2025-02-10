@@ -85,10 +85,17 @@
 
 input[type="date"] {
     text-align: center;
+    appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
   
 input[type="date"]::-webkit-datetime-edit {
     text-align: center;
+    
 }
 /******************/
 

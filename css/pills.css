@@ -82,6 +82,14 @@
 .date_field.form__field{
     text-align: center;
 }
+
+input[type="date"] {
+    text-align: center;
+}
+  
+input[type="date"]::-webkit-datetime-edit {
+    text-align: center;
+}
 /******************/
 
 button.btn.btn-primary.ghlikebutton {

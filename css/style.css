@@ -220,7 +220,7 @@ timeinput:focus-visible {
 
 
 /*Mobile devices*/
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1400px) {
   nav {
     display: none;
   }
@@ -229,6 +229,7 @@ timeinput:focus-visible {
     display: flex;
     width: 35px;
     height: auto;
+    cursor: pointer;
   }
 
   .hamburger {

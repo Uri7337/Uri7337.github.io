@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentYear = today.getFullYear();
 
     // Nastavíme datum na 7. den příštího měsíce
-    let nextMonth = currentMonth + 1;
+    let nextMonth = currentMonth;
+    if(currentDay > 7){
+      nextMonth++;
+    }
     let nextYear = currentYear;
 
     // Pokud je prosinec, přejdeme na leden dalšího roku

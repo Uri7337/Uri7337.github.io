@@ -46,8 +46,7 @@ body p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 96vw;
 }
 
 .header-logo {
@@ -64,14 +63,45 @@ body p {
   border-radius: 40px;
 }
 
-.hamburger{
-  display: none;
+/* Navigational Links In Global Header */
+
+#hamburger {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 31px;
+  height: 30px;
+}
+
+#hamburger svg {
+  display: flex;
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}
+
+#menu-dropdown {
+  background-color: var(--background2);
+  width: 50vw;
+  height: 60vh;
+  border:none;
+  border-radius: 30px;
+
+  box-shadow: 0px 0 20px 6px var(--color-primary);
+  -webkit-box-shadow: 4px 2px 73px 11px var(--color-primary);
+  -moz-box-shadow: 4px 2px 73px 11px var(--color-primary);
 }
 
 .nav-links {
+  display: flex;
   list-style: none;
   padding: 0;
-  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links li {
@@ -166,9 +196,9 @@ timeinput:focus-visible {
 .ghlikebutton {
   appearance: none;
   background-color: var(--color-primary);
-  border: 1px solid rgba(27, 31, 35, .15);
+  border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
   color: var(--black);
   cursor: pointer;
@@ -203,36 +233,17 @@ timeinput:focus-visible {
 
 .ghlikebutton:disabled {
   background-color: var(--gray);
-  border-color: rgba(27, 31, 35, .1);
-  color: rgba(255, 255, 255, .8);
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
   cursor: default;
 }
 
 .ghlikebutton:active {
   background-color: rgb(1, 121, 140);
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
 
 .result {
   margin-top: 20px;
   font-weight: bold;
-}
-
-
-/*Mobile devices*/
-@media only screen and (max-width: 1400px) {
-  nav {
-    display: none;
-  }
-
-  .hamburger svg {
-    display: flex;
-    width: 35px;
-    height: auto;
-    cursor: pointer;
-  }
-
-  .hamburger {
-    display: flex;
-  }
 }

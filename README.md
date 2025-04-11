@@ -2,5 +2,6 @@
 Rep for web
 
 ## ToDo
-- mobile compactability 
-    - complete header transfer
+- Responsive Design 
+    - mobile - think of better menu design/navigation
+     
